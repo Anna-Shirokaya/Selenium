@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "chromedriver": "^124.0.1",
+    "selenium-webdriver": "^4.20.0"
+  },
+  "name": "selenuim",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
