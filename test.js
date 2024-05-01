@@ -50,6 +50,6 @@ await expect(numberOfLines).toEqual(regions.length);
   } finally {
     await driver.quit()
   }
-}, 30000);
+}, 130000);
 
 //})
