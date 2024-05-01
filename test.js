@@ -1,8 +1,11 @@
 const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
+//const { expect } = require('jest');
 const fs = require('fs');
 const { TIMEOUT } = require('dns');
 
-(async function example() {
+test('the correct number of lines in the file', async () => {
+
+//(async function example() {
   let driver = await new Builder().forBrowser('firefox').build()
   try {
     await driver.get('https://www.onlyoffice.com/')   
@@ -12,7 +15,7 @@ const { TIMEOUT } = require('dns');
     
     // Найти все элементы с классом "region"
     let regions = await driver.findElements(By.className('companydata'));
-    await driver.sleep(1000);
+    
     let csvData = [];
     
     // Извлечь текст из каждого найденного элемента
@@ -37,9 +40,16 @@ const { TIMEOUT } = require('dns');
         fileStream.write('"' +  item + '"' + '\n');
     });  
     fileStream.end();
-   
+// Чтение содержимого файла
+const fileContent = fs.readFileSync('data.csv', 'utf8');
+const lines = fileContent.split('\n');
+const numberOfLines = lines.length;
+
+await expect(numberOfLines).toEqual(regions.length);
 
   } finally {
     await driver.quit()
   }
-})()
+}, 10000);
+
+//})
