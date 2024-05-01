@@ -6,10 +6,8 @@
   "name": "selenuim",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    
+  "scripts": {    
     "test": "jest"
-  },
   },
   "author": "",
   "license": "ISC",
